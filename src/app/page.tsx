@@ -5,8 +5,13 @@ import { Button } from '@/components/ui/button';
 import { SuggestNailArtDesignForm } from '@/components/SuggestNailArtDesignForm';
 import { Gallery } from '@/components/Gallery';
 import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
 
 export default function Home() {
+  const whatsappNumber = "6289604220504";
+  const whatsappMessage = encodeURIComponent("Hi NailArt Studio! I'm interested in booking a nail art appointment. Can you let me know your availability?");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   return (
     <div className="container mx-auto py-10">
       {/* Hero Section */}
@@ -86,7 +91,9 @@ export default function Home() {
             <p className="text-sm text-muted-foreground">
               Contact us for bookings and inquiries.
             </p>
-            <Button>Book Appointment</Button>
+            <Button asChild>
+              <Link href={whatsappUrl}>Book Appointment</Link>
+            </Button>
           </CardContent>
         </Card>
       </section>
