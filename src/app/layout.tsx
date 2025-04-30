@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Link from 'next/link'; // Keep Link if used elsewhere in layout, otherwise remove
-import { cn } from '@/lib/utils'; // Keep cn if used elsewhere, otherwise remove
-import Navbar from '@/components/Navbar'; // Import the new Navbar component
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,9 +28,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
-        {/* Render the Navbar component */}
-        <Navbar />
-
         {/* Add padding-top to main content to avoid overlap with fixed navbar */}
         <main className="pt-16"> {/* Adjust pt value based on navbar height */}
           {children}

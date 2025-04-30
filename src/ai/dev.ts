@@ -1,1 +1,0 @@
-import '@/ai/flows/suggest-nail-art-design.ts';
