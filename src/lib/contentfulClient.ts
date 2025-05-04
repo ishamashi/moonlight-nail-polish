@@ -50,19 +50,4 @@ export interface ServiceEntrySkeleton extends EntrySkeletonType {
   contentTypeId: "nailServices"; // <-- PENTING: Ganti 'service' dengan ID Content Model Anda
 }
 
-// Tipe Skeleton untuk Blog (Tetap ada dari contoh Anda)
-export interface BlogPostEntry extends EntrySkeletonType {
-  fields: {
-    title: string;
-    slug: string; // Bisa string biasa atau object { current: string } tergantung setup
-    publishedDate: string;
-    excerpt: string;
-    coverImage?: Asset;
-    content: any; // Tipe Rich Text JSON
-    tags?: EntrySkeletonType[];
-    author?: EntrySkeletonType;
-  };
-  contentTypeId: "blogPage"; // ID untuk blog post
-}
-
 // Definisikan juga tipe untuk TagEntry, AuthorEntry jika perlu
