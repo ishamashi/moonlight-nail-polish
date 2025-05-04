@@ -15,8 +15,8 @@ const GalleryPreview: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">A Glimpse of Our Artistry</h2>
-        <p className="text-muted max-w-2xl mx-auto mb-12">Explore a selection of nail designs crafted with precision and passion at Moonlight Nails.</p>
+        <h2 className="font-serif text-primary text-3xl md:text-4xl font-bold mb-4">A Glimpse of Our Artistry</h2>
+        <p className="text-secondary max-w-2xl mx-auto mb-12">Explore a selection of nail designs crafted with precision and passion at Moonlight Nails.</p>
 
         {/* Ganti dengan Carousel atau Grid yang lebih interaktif */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">

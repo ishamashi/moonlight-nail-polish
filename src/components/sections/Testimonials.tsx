@@ -22,7 +22,7 @@ const Testimonials: React.FC = () => {
             <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-md text-left relative">
               {/* Ikon kutipan (opsional) */}
               {/* <FaQuoteLeft className="absolute top-4 left-4 text-5xl text-primary opacity-10" /> */}
-              <p className="italic text-muted mb-4 z-10 relative">&quot;{testimonial.quote}&quot;</p>
+              <p className="italic text-secondary mb-4 z-10 relative">&quot;{testimonial.quote}&quot;</p>
               <p className="font-semibold text-right text-primary">- {testimonial.author}</p>
             </div>
           ))}

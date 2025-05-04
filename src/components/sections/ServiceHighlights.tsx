@@ -18,7 +18,7 @@ const ServiceHighlights: React.FC = () => {
       {/* Warna latar sedikit berbeda */}
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Our Signature Services</h2>
-        <p className="text-muted max-w-2xl mx-auto mb-12">Experience the artistry and care that defines Moonlight Nails. Explore some of our most requested services.</p>
+        <p className="text-secondary max-w-2xl mx-auto mb-12">Experience the artistry and care that defines Moonlight Nails. Explore some of our most requested services.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {highlightedServices.map((service) => (
