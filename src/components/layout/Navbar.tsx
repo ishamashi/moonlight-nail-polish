@@ -1,61 +1,53 @@
-// src/components/layout/Navbar.tsx
-import Link from 'next/link';
-import React from 'react';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Button from "@/components/ui/Button";
 
-// Komponen ini secara default adalah Server Component
 const Navbar: React.FC = () => {
+  // State untuk menu mobile (akan ditambahkan nanti)
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50"> {/* Latar putih, shadow halus, sticky */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Kontainer responsif */}
-        <div className="flex justify-between items-center h-16"> {/* Flexbox untuk layout */}
-          {/* Logo / Brand Name */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-serif font-bold text-primary-dark hover:text-accent-gold transition-colors">
-              Moonlight Nails
-            </Link>
-          </div>
+    <header className="sticky top-0 z-50 bg-background bg-opacity-90 backdrop-blur-md shadow-sm">
+      <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2">
+          {/* <Image src="/logo.svg" alt="Moonlight Nails Logo" width={40} height={40} /> */}
+          <span className="font-serif text-2xl font-bold text-primary">Moonlight Nails</span>
+        </Link>
 
-          {/* Navigation Links (Desktop) */}
-          <div className="hidden sm:ml-6 sm:flex sm:space-x-6 lg:space-x-8"> {/* Sembunyikan di mobile, tampilkan di sm ke atas */}
-            <Link href="/" className="text-foreground hover:text-accent-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">
-              Home
-            </Link>
-            <Link href="/services" className="text-foreground hover:text-accent-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">
-              Services
-            </Link>
-            <Link href="/gallery" className="text-foreground hover:text-accent-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">
-              Gallery
-            </Link>
-            <Link href="/about" className="text-foreground hover:text-accent-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">
-              About Us
-            </Link>
-            <Link href="/booking" className="bg-accent-gold text-white hover:bg-opacity-90 transition-colors px-4 py-2 rounded-md text-sm font-medium shadow-sm">
-              Book Now {/* Tombol CTA */}
-            </Link>
-             <Link href="/contact" className="text-foreground hover:text-accent-gold transition-colors px-3 py-2 rounded-md text-sm font-medium">
-               Contact
-             </Link>
-          </div>
-
-          {/* Mobile Menu Button Placeholder (Tambahkan logic jika perlu) */}
-          <div className="sm:hidden"> {/* Tampilkan hanya di mobile */}
-            {/* Ganti dengan ikon burger menu nanti */}
-            <button className="text-foreground p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-gold">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-          </div>
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center space-x-6">
+          <Link href="/" className="text-foreground hover:text-primary transition duration-300">
+            Home
+          </Link>
+          <Link href="/services" className="text-foreground hover:text-primary transition duration-300">
+            Services
+          </Link>
+          <Link href="/gallery" className="text-foreground hover:text-primary transition duration-300">
+            Gallery
+          </Link>
+          <Link href="/about" className="text-foreground hover:text-primary transition duration-300">
+            About
+          </Link>
+          <Link href="/contact" className="text-foreground hover:text-primary transition duration-300">
+            Contact
+          </Link>
+          <Button href="/booking" variant="primary" size="sm">
+            Book Now
+          </Button>
         </div>
-      </div>
 
-      {/* Mobile Menu Placeholder (Panel yang muncul saat tombol di klik) */}
-      {/* <div className="sm:hidden">
-        <div className="pt-2 pb-3 space-y-1">
-          // Links untuk mobile di sini
+        {/* Tombol Hamburger (Mobile) */}
+        <div className="md:hidden">
+          {/* Ganti dengan ikon hamburger */}
+          <button /* onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} */ className="text-foreground">Menu</button>
         </div>
-      </div> */}
-    </nav>
+      </nav>
+
+      {/* Menu Mobile (Dropdown/Sidebar) - akan dibuat terpisah */}
+      {/* {isMobileMenuOpen && ( ... )} */}
+    </header>
   );
 };
 
