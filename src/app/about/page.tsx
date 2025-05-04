@@ -51,9 +51,9 @@ const AboutPage: React.FC = () => {
             <div className="prose lg:prose-lg max-w-none text-secondary space-y-4">
               {" "}
               {/* Gunakan plugin typography jika diinstal */}
-              <p>Moonlight Nails wasn't just built as another nail salon in Jimbaran; it was born from a passion for meticulous artistry and a desire to create a truly personal escape. {artistName}, founder and lead artist, envisioned a space where luxury nail care meets unparalleled privacy and tranquility.</p>
-              <p>With 2 years of dedicated experience and a keen eye for detail honed through [sebutkan pelatihan atau pengalaman spesifik jika ada, misal: 'extensive training in advanced nail techniques'], {artistName}'s approach is centered on understanding your unique style and translating it into beautiful, long-lasting nail art.</p>
-              <p>"My goal," says {artistName}, "is for every client to leave not only with stunning nails but feeling refreshed, confident, and truly cared for during their private nail appointment here in Bali."</p>
+              <p>Moonlight Nails wasn&apos;t just built as another nail salon in Jimbaran; it was born from a passion for meticulous artistry and a desire to create a truly personal escape. {artistName}, founder and lead artist, envisioned a space where luxury nail care meets unparalleled privacy and tranquility.</p>
+              <p>With 2 years of dedicated experience and a keen eye for detail honed through [sebutkan pelatihan atau pengalaman spesifik jika ada, misal: &apos;extensive training in advanced nail techniques&apos;], {artistName}&apos;s approach is centered on understanding your unique style and translating it into beautiful, long-lasting nail art.</p>
+              <p>&quot;My goal,&quot; says {artistName}, &quot;is for every client to leave not only with stunning nails but feeling refreshed, confident, and truly cared for during their private nail appointment here in Bali.&quot;</p>
             </div>
             {/* Link ke Galeri mungkin? */}
             <div className="mt-8">
