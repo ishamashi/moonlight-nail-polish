@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props // Props lain untuk elemen button (onClick, type, etc.)
 }) => {
   // Base styles
-  let baseClasses = "inline-flex items-center justify-center rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseClasses = "inline-flex items-center justify-center rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
 
   // Size styles
   const sizeClasses = {
