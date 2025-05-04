@@ -1,0 +1,62 @@
+@import "tailwindcss"; /* Tetap untuk Tailwind v4 */
+
+:root {
+  /* Warna Dasar (Light Mode) dari Palette */
+  --background: #eae2f8; /* Lavender Pucat sebagai background utama */
+  --foreground: #1a1a2e; /* Biru Sangat Gelap sebagai teks utama */
+}
+
+/* Blok non-standar ini dipertahankan sesuai permintaan */
+@theme inline {
+  /* Variabel dari :root */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Warna Tema Utama (Light Mode) dari Palette */
+  --color-primary: #7a5195; /* Ungu Tua */
+  --color-secondary: #1a1a2e; /* Biru Sangat Gelap */
+  --color-accent: #5b8bf5; /* Biru Cerah */
+
+  /* Warna Tambahan (Light Mode) dari Palette */
+  --color-muted: #b8a9c9; /* Ungu Redup */
+  --color-muted-foreground: #1a1a2e; /* Biru Sangat Gelap (kontras di atas muted) */
+  --color-border: #b8a9c9; /* Ungu Redup */
+  --radius: 0.5rem; /* Tetap dari sebelumnya */
+
+  /* Font Variabel (Tetap dari sebelumnya - Sebaiknya dikelola terpisah) */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* == PENTING: Mengganti 'light' menjadi 'dark' karena ini seharusnya untuk dark mode == */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Warna Dasar (Dark Mode) dari Palette */
+    --background: #1a1a2e; /* Biru Sangat Gelap sebagai background */
+    --foreground: #eae2f8; /* Lavender Pucat sebagai teks */
+
+    /* == Penambahan Variabel Tema Utama (Dark Mode) dari Palette == */
+    /* (Variabel di dalam blok @theme inline tidak otomatis berubah, perlu didefinisikan ulang jika perilakunya seperti itu) */
+    /* Jika @theme inline hanya sekali dibaca, Anda mungkin perlu mendefinisikan ulang semua ini di sini juga */
+    /* Atau, lebih baik, definisikan *hanya* di :root seperti standar CSS */
+
+    /* Kita asumsikan variabel di :root ini akan menimpa yang dasar */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: #b8a9c9; /* Ungu Redup (lebih terang untuk kontras) */
+    --color-secondary: #eae2f8; /* Lavender Pucat (sebagai sekunder terang) */
+    --color-accent: #5b8bf5; /* Biru Cerah (tetap menonjol) */
+
+    /* == Penambahan Variabel Baru (Dark Mode) dari Palette == */
+    --color-muted: #7a5195; /* Ungu Tua (sebagai muted gelap) */
+    --color-muted-foreground: #eae2f8; /* Lavender Pucat (kontras di atas muted dark) */
+    --color-border: #7a5195; /* Ungu Tua (sebagai border gelap) */
+    /* --radius: 0.5rem; */ /* Biasanya radius tidak perlu diubah per tema */
+  }
+}
+
+body {
+  background: var(--background); /* Tetap */
+  color: var(--foreground); /* Tetap */
+  font-family: Arial, Helvetica, sans-serif; /* Tetap */
+}
