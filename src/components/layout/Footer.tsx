@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-// import { FaInstagram, FaWhatsapp } from 'react-icons/fa'; // Contoh ikon sosial
+import { FaInstagram, FaWhatsapp } from "react-icons/fa"; // Contoh ikon sosial
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,14 +14,18 @@ const Footer: React.FC = () => {
           <p className="text-sm mb-4">Your private sanctuary for exquisite nail artistry and relaxation.</p>
           {/* Social Media Icons */}
           <div className="flex justify-center md:justify-start space-x-4">
-            {/* <Link href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition duration-300"><FaInstagram size={24} /></Link> */}
-            {/* <Link href="https://wa.me/yournumber" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition duration-300"><FaWhatsapp size={24} /></Link> */}
-            <a href="#" className="hover:text-primary transition duration-300">
+            <Link href="https://instagram.com/moonlight.nailspolished" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition duration-300">
+              <FaInstagram size={24} />
+            </Link>
+            <Link href="https://wa.me/6289604220504" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition duration-300">
+              <FaWhatsapp size={24} />
+            </Link>
+            {/* <a href="#" className="hover:text-primary transition duration-300">
               IG
-            </a>
-            <a href="#" className="hover:text-primary transition duration-300">
+            </a> */}
+            {/* <a href="#" className="hover:text-primary transition duration-300">
               WA
-            </a>
+            </a> */}
           </div>
         </div>
 

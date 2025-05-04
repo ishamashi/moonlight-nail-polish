@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
         className="-z-10" // Taruh di belakang konten
       />
       {/* Overlay Gelap untuk Kontras Teks */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-black to-primary bg-opacity-40 z-0"></div>
 
       {/* Konten Teks & CTA */}
       <div className="relative z-10 max-w-3xl px-4">
