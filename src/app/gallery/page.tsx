@@ -1,6 +1,6 @@
 // app/gallery/page.tsx
 import React from "react";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { getAllGalleryImages } from "@/lib/gallery"; // Impor fungsi fetch data
 import GalleryClientComponent from "@/components/GalleryClientComponent"; // Impor komponen client baru
 import { FiCamera } from "react-icons/fi";

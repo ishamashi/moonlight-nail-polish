@@ -42,7 +42,7 @@ export interface GalleryEntrySkeleton extends EntrySkeletonType {
     title: string;
     slug: string;
     images?: Asset[]; // Array of Assets (Media, many files)
-    description?: any; // Rich Text
+    description?: string; // Rich Text
     tags?: string[]; // Short text, list
   };
   contentTypeId: "galleryNailart"; // <-- PENTING: Ganti 'galleryItem' dengan ID Content Model Anda

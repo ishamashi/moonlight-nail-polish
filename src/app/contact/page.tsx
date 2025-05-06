@@ -1,7 +1,7 @@
 // src/app/contact/page.tsx
 import React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
+// import Link from "next/link";
 import Button from "@/components/ui/Button"; // Pastikan path benar
 import { FiPhone, FiMail, FiClock, FiMapPin, FiInstagram, FiMessageSquare } from 'react-icons/fi'; // Impor ikon
 // Import WhatsApp icon if needed, e.g., from 'react-icons/fa' or 'react-icons/bs'
@@ -32,7 +32,7 @@ const ContactPage: React.FC = () => {
             Get In Touch
           </h1>
           <p className="text-lg md:text-xl text-muted max-w-3xl mx-auto">
-            We'd love to hear from you. Reach out with any questions or to schedule your private nail experience in Jimbaran.
+            We&apos;d love to hear from you. Reach out with any questions or to schedule your private nail experience in Jimbaran.
           </p>
         </div>
       </section>
