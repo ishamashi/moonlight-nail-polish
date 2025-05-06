@@ -36,6 +36,18 @@ export function getImageUrl(asset: Asset | undefined | null): string | undefined
 
 // --- Tipe Skeleton (Tambahkan untuk Service) ---
 
+// Tipe Skeleton untuk Gallery Entry
+export interface GalleryEntrySkeleton extends EntrySkeletonType {
+  fields: {
+    title: string;
+    slug: string;
+    images?: Asset[]; // Array of Assets (Media, many files)
+    description?: any; // Rich Text
+    tags?: string[]; // Short text, list
+  };
+  contentTypeId: "galleryNailart"; // <-- PENTING: Ganti 'galleryItem' dengan ID Content Model Anda
+}
+
 // Tipe Skeleton untuk Service Entry
 export interface ServiceEntrySkeleton extends EntrySkeletonType {
   fields: {
