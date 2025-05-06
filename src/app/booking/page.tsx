@@ -48,7 +48,7 @@ const BookingPage: React.FC = () => {
               <h3 className="text-xl font-semibold text-foreground mb-3">How to Book:</h3>
               <ol className="list-decimal list-inside space-y-3 text-secondary marker:text-primary marker:font-semibold">
                 <li>
-                  Click the "Book via WhatsApp" button below or message us directly at{" "}
+                  Click the &quot;Book via WhatsApp&quot; button below or message us directly at{" "}
                   <a href={`tel:+${whatsappNumber}`} className="font-semibold text-primary hover:text-accent underline decoration-dotted">
                     +62 6289604220504
                   </a>{" "}
