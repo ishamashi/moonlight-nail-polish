@@ -22,7 +22,7 @@ export default async function ServicesPage() {
   return (
     <div className="bg-background">
       {/* 1. Bagian Header Halaman (tetap sama) */}
-      <section className="py-16 md:py-24 text-center border-b bg-gray-50 border-border">
+      <section className="py-16 md:py-24 text-center border-b bg-gradient-to-br from-primary via-black to-primary bg-opacity-40 border-border">
         <div className="container mx-auto px-4">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">Our Service Menu</h1>
           <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">Discover the range of personalized nail treatments designed for your beauty and relaxation, offered in our exclusive private setting.</p>

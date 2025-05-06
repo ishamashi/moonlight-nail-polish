@@ -23,7 +23,7 @@ export default async function GalleryPage() {
   return (
     <div className="bg-background text-foreground">
       {/* 1. Header Halaman (Tetap di Server Component karena statis) */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 text-center bg-gradient-to-br from-accent via-black to-accent border-b border-border">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 text-center bg-gradient-to-br from-primary via-black to-primary border-b border-border">
         {/* Sesuaikan gradient */}
         <div className="container mx-auto px-4 relative z-10">
           <FiCamera className="h-12 w-12 mx-auto mb-4 text-primary" />
