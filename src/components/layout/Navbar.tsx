@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
           <Link href="/" className="block w-full text-center py-2 text-lg text-foreground hover:text-primary transition duration-300" onClick={closeMobileMenu}>
             Home
           </Link>
-          <Link href="/ai-stylist" className="text-foreground hover:text-primary transition duration-300">
+          <Link href="/ai-stylist" className="block w-full text-center py-2 text-lg text-foreground hover:text-primary transition duration-300" onClick={closeMobileMenu}>
             AI Stylist
           </Link>
           <Link href="/services" className="block w-full text-center py-2 text-lg text-foreground hover:text-primary transition duration-300" onClick={closeMobileMenu}>
