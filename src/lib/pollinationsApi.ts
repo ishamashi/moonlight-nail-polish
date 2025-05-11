@@ -1,11 +1,10 @@
 // lib/pollinationsApi.ts
-import axios, { type AxiosResponse } from "axios"; // Menggunakan axios untuk konsistensi dan error handling
+import axios, { type AxiosResponse } from "axios";
 
 const POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/";
 
-// Interface untuk parameter Pollinations AI (sesuai dokumentasi Anda)
 export interface PollinationsParameters {
-  model?: string; // e.g., "flux", "turbo", "dreamshaper"
+  model?: string;
   seed?: number;
   width?: number;
   height?: number;
@@ -13,24 +12,12 @@ export interface PollinationsParameters {
   private?: boolean;
   enhance?: boolean;
   safe?: boolean;
-  // referrer?: string; // Jika Anda ingin menggunakannya
 }
 
-/**
- * Mengambil gambar dari Pollinations AI berdasarkan prompt dan parameter.
- * @param prompt Teks deskripsi untuk gambar.
- * @param params Parameter opsional untuk Pollinations AI.
- * @returns Promise yang resolve ke Blob gambar jika berhasil, atau null jika gagal.
- */
-export async function queryPollinationsImage(
-  prompt: string,
-  params: PollinationsParameters = {} // Beri default object kosong
-): Promise<Blob | null> {
+export async function queryPollinationsImage(prompt: string, params: PollinationsParameters = {}): Promise<Blob | null> {
   const encodedPrompt = encodeURIComponent("Not closeup nail art " + prompt + " Only one hand and No more than 5 fingers");
   const queryParams = new URLSearchParams();
 
-  // Tambahkan parameter yang diberikan ke query string
-  // Hanya tambahkan parameter yang memiliki nilai (bukan undefined)
   if (params.model) queryParams.append("model", params.model);
   if (params.seed !== undefined) queryParams.append("seed", String(params.seed));
   if (params.width !== undefined) queryParams.append("width", String(params.width));
@@ -46,7 +33,7 @@ export async function queryPollinationsImage(
 
   try {
     const response: AxiosResponse<Blob> = await axios.get(url, {
-      responseType: "blob", // Mengharapkan data biner mentah
+      responseType: "blob",
     });
 
     console.log("Pollinations AI response status:", response.status);
@@ -60,10 +47,12 @@ export async function queryPollinationsImage(
       } else {
         let errorDetail = `Pollinations AI returned status 200 but content-type is '${contentType}', not an image.`;
         try {
-          const textContent = await response.data.text(); // Coba baca blob sebagai teks
+          const textContent = await response.data.text();
           console.error("Pollinations AI non-image response content (status 200):", textContent);
           errorDetail += ` Content: ${textContent}`;
-        } catch (e) {
+          // Perbaikan: Ganti 'e' menjadi '_textParseError' atau nama lain dengan underscore
+        } catch (_textParseError) {
+          // Variabel 'e' di baris 66 diganti
           console.error("Could not read non-image response content as text from Pollinations.");
         }
         throw new Error(errorDetail);
@@ -79,13 +68,14 @@ export async function queryPollinationsImage(
       if (error.response) {
         console.error("Pollinations AI Error Status:", error.response.status);
         console.error("Pollinations AI Error Headers:", error.response.headers);
-        // Coba baca detail error, Pollinations mungkin mengirim teks/html error
         if (error.response.data instanceof Blob) {
           try {
             const errorText = await error.response.data.text();
             console.error("Pollinations AI Error Data (from Blob as Text):", errorText);
-            errorMessage = `Pollinations AI Error ${error.response.status}: ${errorText.substring(0, 200)}...`; // Batasi panjang pesan
-          } catch (e) {
+            errorMessage = `Pollinations AI Error ${error.response.status}: ${errorText.substring(0, 200)}...`;
+            // Perbaikan: Ganti 'e' menjadi '_blobReadError' atau nama lain dengan underscore
+          } catch (_blobReadError) {
+            // Variabel 'e' di baris 88 diganti
             errorMessage = `Pollinations AI Error ${error.response.status}. Could not read error data.`;
           }
         } else {

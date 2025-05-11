@@ -7,7 +7,7 @@ export type AiProvider = "fal" | "pollinations";
 
 // Interface gabungan untuk parameter, bisa lebih spesifik jika perlu
 // Untuk sekarang, kita akan bedakan di dalam fungsi
-interface CommonAiParameters {
+export interface CommonAiParameters {
   fal?: FalAiParameters;
   pollinations?: PollinationsParameters;
 }

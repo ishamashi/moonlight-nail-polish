@@ -1,7 +1,7 @@
 // app/ai-stylist/page.tsx
 import React from "react";
 import type { Metadata } from "next";
-import { FiCpu, FiStar } from "react-icons/fi"; // Ikon yang relevan
+import { FiStar } from "react-icons/fi"; // Ikon yang relevan
 import AiStylistClientComponent from "@/components/AiStylistClientComponent"; // Komponen Client yang akan kita buat
 
 export const metadata: Metadata = {

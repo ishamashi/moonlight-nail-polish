@@ -5,8 +5,8 @@ import React, { useState, useEffect } from "react"; // Tambah useEffect
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
-import { FiSend, FiLoader, FiInfo, FiCpu } from "react-icons/fi";
-import { generateAiImage, type AiProvider } from "@/lib/aiImageService"; // Impor fungsi abstraksi
+import { FiSend, FiLoader, FiInfo } from "react-icons/fi";
+import { generateAiImage, type AiProvider, type CommonAiParameters } from "@/lib/aiImageService"; // Impor fungsi abstraksi
 import type { FalAiParameters } from "@/lib/falApi"; // Untuk parameter spesifik
 import type { PollinationsParameters } from "@/lib/pollinationsApi"; // Untuk parameter spesifik
 
@@ -37,7 +37,7 @@ const AiStylistClientComponent: React.FC = () => {
 
     try {
       let imageBlob: Blob | null = null;
-      let specificParams: any = {};
+      const specificParams: CommonAiParameters = {}; // Tidak lagi 'any
 
       if (selectedProvider === "fal") {
         specificParams.fal = {
@@ -64,9 +64,18 @@ const AiStylistClientComponent: React.FC = () => {
       } else {
         setError(`Received no image data from ${selectedProvider} AI. Please try a different prompt.`);
       }
-    } catch (apiError: any) {
+    } catch (apiError) {
       console.error(`${selectedProvider} AI API Error in Component:`, apiError);
-      setError(apiError.message || `Failed to generate image with ${selectedProvider}. Please try again.`);
+
+      let errorMessage = `Failed to generate image with ${selectedProvider}. Please try again.`;
+      if (apiError instanceof Error) {
+        errorMessage = apiError.message; // Akses .message jika itu instance Error
+      } else if (typeof apiError === "string") {
+        errorMessage = apiError; // Jika errornya string
+      }
+      // Anda bisa menambahkan pengecekan lain jika perlu
+
+      setError(errorMessage);
       setGeneratedImages([]);
     } finally {
       setIsLoading(false);
@@ -87,9 +96,9 @@ const AiStylistClientComponent: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">How It Works</h2>
           <p className="text-secondary mb-2">Simply type a description of the nail art you envision. Be as descriptive as you like! For example:</p>
           <p className="text-sm text-muted italic mb-6">
-            "Elegant nude base with delicate white floral patterns and a touch of gold foil on short almond nails."
+            &quot;Elegant nude base with delicate white floral patterns and a touch of gold foil on short almond nails.&quot;
             <br />
-            "Bold geometric black and white design with a matte finish."
+            &quot;Bold geometric black and white design with a matte finish.&quot;
           </p>
           <p className="text-secondary">Our AI will then generate visual concepts to inspire your next look.</p>
         </div>
