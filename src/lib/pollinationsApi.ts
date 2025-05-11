@@ -53,7 +53,7 @@ export async function queryPollinationsImage(prompt: string, params: Pollination
           // Perbaikan: Ganti 'e' menjadi '_textParseError' atau nama lain dengan underscore
         } catch (_textParseError) {
           // Variabel 'e' di baris 66 diganti
-          console.error("Could not read non-image response content as text from Pollinations.");
+          console.error(_textParseError, "Could not read non-image response content as text from Pollinations.");
         }
         throw new Error(errorDetail);
       }
@@ -76,7 +76,7 @@ export async function queryPollinationsImage(prompt: string, params: Pollination
             // Perbaikan: Ganti 'e' menjadi '_blobReadError' atau nama lain dengan underscore
           } catch (_blobReadError) {
             // Variabel 'e' di baris 88 diganti
-            errorMessage = `Pollinations AI Error ${error.response.status}. Could not read error data.`;
+            errorMessage = `Pollinations AI Error ${error.response.status}. Could not read error data. ${_blobReadError}`;
           }
         } else {
           errorMessage = `Pollinations AI Error ${error.response.status}.`;

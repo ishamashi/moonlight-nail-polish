@@ -69,7 +69,7 @@ export async function queryFalAiImage(userPrompt: string, parameters?: FalAiPara
           // Perbaikan: Gunakan variabel error yang berbeda atau prefix dengan underscore jika tidak digunakan
         } catch (_textParseError) {
           // Variabel 'e' diganti menjadi '_textParseError'
-          console.error("Could not read non-image response content as text.");
+          console.error(_textParseError, "Could not read non-image response content as text.");
         }
         throw new Error(errorDetail);
       }
@@ -107,12 +107,12 @@ export async function queryFalAiImage(userPrompt: string, parameters?: FalAiPara
                 // Perbaikan: Gunakan variabel error yang berbeda atau prefix dengan underscore
               } catch (_jsonParseError) {
                 // Variabel 'jsonParseError' diganti menjadi '_jsonParseError'
-                errorDetailString = errorText;
+                errorDetailString = errorText, _jsonParseError;
               }
               // Perbaikan: Gunakan variabel error yang berbeda atau prefix dengan underscore
             } catch (_blobReadError) {
               // Variabel 'e' diganti menjadi '_blobReadError'
-              errorDetailString = "Could not read error data from Blob.";
+              errorDetailString = "Could not read error data from Blob." + _blobReadError;
             }
           } else if (typeof responseData === "object" && responseData !== null) {
             // Jika data error sudah objek (axios berhasil parse JSON error)
