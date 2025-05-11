@@ -107,7 +107,8 @@ export async function queryFalAiImage(userPrompt: string, parameters?: FalAiPara
                 // Perbaikan: Gunakan variabel error yang berbeda atau prefix dengan underscore
               } catch (_jsonParseError) {
                 // Variabel 'jsonParseError' diganti menjadi '_jsonParseError'
-                errorDetailString = errorText, _jsonParseError;
+                errorDetailString = errorText;
+                console.error("Fal AI Error Data (from Blob as Text):", _jsonParseError);
               }
               // Perbaikan: Gunakan variabel error yang berbeda atau prefix dengan underscore
             } catch (_blobReadError) {
