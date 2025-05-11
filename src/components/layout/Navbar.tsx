@@ -50,6 +50,9 @@ const Navbar: React.FC = () => {
           <Link href="/" className="text-foreground hover:text-primary transition duration-300">
             Home
           </Link>
+          <Link href="/ai-stylist" className="text-foreground hover:text-primary transition duration-300">
+            AI Stylist
+          </Link>
           <Link href="/services" className="text-foreground hover:text-primary transition duration-300">
             Services
           </Link>
@@ -93,6 +96,9 @@ const Navbar: React.FC = () => {
           {/* Salin link dari menu desktop, sesuaikan styling jika perlu */}
           <Link href="/" className="block w-full text-center py-2 text-lg text-foreground hover:text-primary transition duration-300" onClick={closeMobileMenu}>
             Home
+          </Link>
+          <Link href="/ai-stylist" className="text-foreground hover:text-primary transition duration-300">
+            AI Stylist
           </Link>
           <Link href="/services" className="block w-full text-center py-2 text-lg text-foreground hover:text-primary transition duration-300" onClick={closeMobileMenu}>
             Services
